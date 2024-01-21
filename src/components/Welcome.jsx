@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoItemContext } from '../store/todo-item-store'
 
-const Welcome = ({todoItem}) => {
+const Welcome = () => {
+  const {todoItems} = useContext(TodoItemContext)
+  
   return (
     <div>
-      {todoItem.length===0 && <h3>Welcome</h3>}
+      {todoItems.length===0 && <h3>Welcome</h3>}
     </div>
   )
 }

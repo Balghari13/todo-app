@@ -1,9 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
+import { TodoItemContext } from '../store/todo-item-store';
 
 
-export const AddTodo = ({addBtn}) => {
+export const AddTodo = () => {
   // const [name, setName] = useState('')
   // const [date, setDate] = useState('')
+  const {addBtn} = useContext(TodoItemContext)
   const name = useRef();
   const date = useRef();
   

@@ -4,6 +4,7 @@ import './App.css'
 import { AddTodo } from './components/AddTodo'
 import { Items } from './components/Items'
 import Welcome from './components/Welcome'
+import { TodoItemContext } from './store/todo-item-store'
 
 
 function App() {
@@ -31,13 +32,16 @@ function App() {
     const newItem = todoItems.filter((item)=>item.name != todoName)
     setTodoItems(newItem)
   }
+  
   return (
-    <>
+    <TodoItemContext.Provider value={{
+      todoItems,addBtn,delBtn
+    }}>
     <h2>Todo Items</h2>
-     <AddTodo addBtn={addBtn}/>
-     <Welcome todoItem={todoItems}/>
-     <Items todo={todoItems} delBtn={delBtn}/>
-    </>
+     <AddTodo />
+     <Welcome/>
+     <Items />
+    </TodoItemContext.Provider>
   )
 }
 

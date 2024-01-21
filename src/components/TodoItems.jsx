@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoItemContext } from '../store/todo-item-store'
 
-const TodoItems = ({todoName,todoDate, delBtn}) => {
+const TodoItems = ({todoName,todoDate}) => {
+  const {delBtn} = useContext(TodoItemContext)
   return (
     <>
     <div className='container row mt-3'>
