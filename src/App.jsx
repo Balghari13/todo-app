@@ -8,11 +8,21 @@ function App() {
 
   const [todoItems, setTodoItems] = useState([])
     
-  const addBtn = (name,date) =>{
-    const newItems = [...todoItems, {
-      name:name, date:date
-    }]
-    setTodoItems(newItems)
+  // const addBtn = (name,date) =>{
+  //   const newItems = [...todoItems, {
+  //     name:name, date:date
+  //   }]
+  //   setTodoItems(newItems)
+  // }
+
+  //better way to write spread operator called functional update
+  const addBtn =(name,date)=>{
+    setTodoItems((currValue)=>[
+      ...currValue, {
+        name:name, 
+        date:date
+      }
+    ])
   }
   const delBtn = (todoName) =>{
    // console.log('delet');
