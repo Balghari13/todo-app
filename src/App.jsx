@@ -3,6 +3,8 @@ import { useState } from 'react'
 import './App.css'
 import { AddTodo } from './components/AddTodo'
 import { Items } from './components/Items'
+import Welcome from './components/Welcome'
+
 
 function App() {
 
@@ -33,6 +35,7 @@ function App() {
     <>
     <h2>Todo Items</h2>
      <AddTodo addBtn={addBtn}/>
+     <Welcome todoItem={todoItems}/>
      <Items todo={todoItems} delBtn={delBtn}/>
     </>
   )
